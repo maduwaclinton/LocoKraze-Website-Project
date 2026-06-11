@@ -1,0 +1,157 @@
+/* Common Styles  */
+body {
+    margin: 0px;
+    font-family: "DM Serif Display", serif;
+}
+/* Common Nav-Styles  */
+.navigation-wrapper {
+    height: auto;
+    background-color: #FFB6C1;
+    color: white;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 70px;
+}
+
+/* Left Column Styles  */
+
+.Top-Column {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    grid-column: 1/-1;
+    align-items: center;
+    gap: 40px;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .Contact-Hours-Wrapper {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .contact-icon {
+    margin-right: 15px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .contact-icon a {
+    color: White;
+    text-decoration: none;
+    transition: 0.7s;
+    display: inline-block;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .contact-icon a:hover {
+    color: #FF007F;
+    transform: scale(1.2); 
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .Contact-Hours-Wrapper > .phone a {
+    color: white;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.navigation-wrapper > .Top-Column > .Left-Column > .Contact-Hours-Wrapper > .phone a:hover {
+    color: #FF007F;
+}
+
+/* Middle Column Styles */
+
+.navigation-wrapper > .Top-Column > .Middle-Column > .Banner-Image img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+.navigation-wrapper > .Middle-Column {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+    align-items: center;
+    gap: 70 px;
+}
+
+.navigation-wrapper > .Middle-Column > .Banner-Image {
+    display: flex;
+    justify-content: center;
+}
+
+.Links-Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.Links-Wrapper > .nav-link {
+    width: 120px;
+    text-align: center;
+}
+
+.Links-Wrapper > .nav-link a {
+    color: #FF69B4;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.7s;
+}
+
+.Links-Wrapper > .nav-link a:hover {
+letter-spacing: 2.5px;
+color: #FF1493;
+}
+
+/* Right Column Styles */
+
+.navigation-wrapper > .Top-Column > .Right-Column {
+    display: flex;
+    align-items: center;
+    Justify-content: flex-end;
+
+}
+
+.navigation-wrapper > .Top-Column > .Right-Column > .Address-Wrapper {
+    text-align: right;
+}
+
+.navigation-wrapper > .Top-Column > .Right-Column > .Address-Wrapper a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: 0.7s;
+}
+
+.navigation-wrapper > .Top-Column > .Right-Column > .Address-Wrapper a:hover {
+    color: #FF007F;
+}
+
+.navigation-wrapper > .Top-Column > .Right-Column > .location-icon {
+    margin-left: 15px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+} 
+
+.navigation-wrapper > .Top-Column > .Right-Column > .location-icon a {
+    color: White;
+    text-decoration: none;
+    transition: 0.7s;
+    display: inline-block;
+}
+
+.navigation-wrapper > .Top-Column > .Right-Column > .location-icon a:hover {
+    color: #FF007F;
+    transform: scale(1.2);
+}
