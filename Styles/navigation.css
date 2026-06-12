@@ -1,7 +1,13 @@
 /* Common Styles  */
 body {
     margin: 0px;
-    font-family: "DM Serif Display", serif;
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "XROT" 0,
+        "YROT" 0;
 }
 /* Common Nav-Styles  */
 .navigation-wrapper {
@@ -154,4 +160,79 @@ color: #FF1493;
 .navigation-wrapper > .Top-Column > .Right-Column > .location-icon a:hover {
     color: #FF007F;
     transform: scale(1.2);
+}
+
+/* Ensure Font Awesome icons keep their own font and aren't overridden by the global font */
+.fa, .fas, .fa-solid, .fa-regular, .fa-light, .far, .fal {
+    font-family: "Font Awesome 7 Free" !important;
+    font-style: normal !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fab, .fa-brands {
+    font-family: "Font Awesome 7 Brands" !important;
+    font-style: normal !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* weight mapping (adjust if using different FA version) */
+.fa-solid, .fas { font-weight: 900 !important; }
+.fa-regular, .far { font-weight: 400 !important; }
+.fa-light, .fal { font-weight: 300 !important; }
+
+/* Make icon appearance match the site's font styling */
+.contact-icon i, .location-icon i, .icons-wrapper i, .icons-wrapper .fa {
+    font-size: 1.1em; /* smaller */
+    line-height: 1;
+    color: rgba(255,20,147,0.95); /* color used for stroke */
+    -webkit-text-fill-color: transparent; /* no fill */
+    -webkit-text-stroke: 1px currentColor; /* outline using current color */
+    text-shadow:
+        0 0 6px rgba(255,20,147,0.55),
+        0 0 12px rgba(139,0,255,0.35);
+    vertical-align: middle;
+    transition: transform 0.18s ease, text-shadow 0.18s ease, -webkit-text-stroke 0.18s ease;
+}
+
+.contact-icon a:hover i, .location-icon a:hover i {
+    transform: scale(1.08);
+    -webkit-text-stroke-width: 1.6px;
+    text-shadow:
+        0 0 10px rgba(255,20,147,0.9),
+        0 0 18px rgba(139,0,255,0.6);
+}
+
+/* SVG icon styles (stroke-only neon) */
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6px;
+    transition: transform 0.18s ease, filter 0.18s ease;
+    color: rgba(255,20,147,0.95);
+    filter: drop-shadow(0 0 6px rgba(255,20,147,0.45));
+}
+
+.contact-icon a:hover .icon, .location-icon a:hover .icon {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px rgba(255,20,147,0.85));
+}
+
+/* Also target Font Awesome pseudo-elements which hold the glyphs */
+.fa, .fas, .far, .fal, .fab, .fa-solid, .fa-regular, .fa-light {
+    color: rgba(255,20,147,0.95) !important;
+}
+
+.fa::before, .fas::before, .far::before, .fal::before, .fa-solid::before, .fa-regular::before, .fa-light::before,
+.fa::after, .fas::after, .far::after, .fal::after, .fa-solid::after, .fa-regular::after, .fa-light::after {
+    -webkit-text-fill-color: transparent !important;
+    color: rgba(255,20,147,0.95) !important;
+    -webkit-text-stroke: 1px currentColor !important;
 }
