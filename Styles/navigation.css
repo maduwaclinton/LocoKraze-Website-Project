@@ -225,9 +225,24 @@ color: #FF1493;
     filter: drop-shadow(0 0 12px rgba(255,20,147,0.85));
 }
 
-/* Also target Font Awesome pseudo-elements which hold the glyphs */
-.fa, .fas, .far, .fal, .fab, .fa-solid, .fa-regular, .fa-light {
-    color: rgba(255,20,147,0.95) !important;
+/* Inline SVG cart icon styling for nav links */
+.nav-link .icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  margin-right: 6px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6px;
+  color: inherit;
+  filter: drop-shadow(0 0 4px rgba(255, 20, 147, 0.3));
+  transition: filter 0.2s ease;
+}
+
+.nav-link a:hover .icon {
+  filter: drop-shadow(0 0 8px rgba(255,20,147,0.7));
+}
 }
 
 .fa::before, .fas::before, .far::before, .fal::before, .fa-solid::before, .fa-regular::before, .fa-light::before,
