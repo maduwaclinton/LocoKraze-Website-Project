@@ -6,7 +6,7 @@ body {
 /* Common Nav-Styles  */
 .navigation-wrapper {
     height: auto;
-    background-color: #FFB6C1;
+    background-color: #e48bee;
     color: white;
     display: grid;
     grid-gap: 40px;
@@ -102,7 +102,7 @@ body {
 }
 
 .Links-Wrapper > .nav-link a {
-    color: #FF69B4;
+    color: #FF0090;
     text-decoration: none;
     text-align: center;
     transition: 0.7s;

@@ -1,13 +1,15 @@
-/* Advert Section Styles */
-.Advert-Section {
+/* Hero Section Styles */
+.Hero-Section {
     background-image: url(../images/background-images/With\ love\ K-Pop.JPG);
-    height: 400px;
+    height: 600px;
     background-attachment: fixed;
     background-position: center;;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
 }
 
-.Advert-Section > .Top-Column {
+.Hero-Section > .Top-Column {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -16,38 +18,58 @@
     gap: 40px;
 }
 
-/* 1. The Container (The Glass) */
+/* 1. The Search Bar */
 .glass-search-container {
   display: flex;
   align-items: center;
   width: 80%;
-  max-width: 800px;
+  max-width: 600px;
+  height: 60px;
   padding: 14px 18px;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 60px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
+  transition: background 0.7s ease, box-shadow 0.7s ease;
 }
 
-/* 2. The Stylish Font & Input */
+.glass-search-container:hover {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* The Stylish Font & Input */
 .search-input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.15rem;
-  color: white;
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+  font-size: 2.3em;
+  color: black;
   padding: 12px 0;
+  text-align: center;
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.65);
+  color: #2C004C;
+  justify-content: center;
 }
 
-/* 3. The Button */
+.search-input:focus::placeholder {
+  color: transparent;
+}
+
+/*  The Button */
 .search-button {
   display: inline-flex;
   align-items: center;
@@ -56,15 +78,15 @@
   height: 52px;
   padding: 0;
   background: rgba(255, 255, 255, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  border: 1px solid purple;
+  color: #1B007F;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .search-button:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: purple;
   transform: translateY(-1px);
 }
 
@@ -76,4 +98,56 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Bottom Column */
+.Hero-Section > .Bottom-Column {
+  position: relative;
+  grid-column: 1/-1;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.slide {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease-in-out;
+  will-change: transform, opacity;
+}
+
+/* The slide currently in the center */
+.slide.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  z-index: 3;
+}
+
+/* The slide on the left */
+.slide.prev {
+  opacity: 0.35;
+  left: 40%;
+  transform: translateX(-140%) scale(0.85);
+  z-index: 2;
+}
+
+/* The slide on the right */
+.slide.next {
+  opacity: 0.35;
+  left: 60%;
+  transform: translateX(40%) scale(0.85);
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }

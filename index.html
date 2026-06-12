@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fjalla+One&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Styles/common.css">
@@ -89,7 +91,7 @@
 
     </div>
 
-    <div class="Advert-Section">
+    <div class="Hero-Section">
         <div class="Top-Column">
             <div class="glass-search-container">
                 <input class="search-input" type="text" placeholder="Search here...">
@@ -100,7 +102,15 @@
         </div>
 
         <div class="Bottom-Column">
-            <!-- Other advert content goes here -->
+            <div class="slide prev">
+                <img src="images/Display Images/download (5).jpg" alt="Previous slide">
+            </div>
+            <div class="slide active">
+                <img src="images/Display Images/ateez.jpg" alt="Current slide">
+            </div>
+            <div class="slide next">
+                <img src="images/Display Images/download (6).jpg" alt="Next slide">
+            </div>
         </div>
 
     </div>
@@ -110,5 +120,41 @@
         </div>
     </div>
 
+    <!-- JAVA-SCRIPT -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 1; // Start with the active slide (middle one)
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('prev', 'active', 'next');
+                
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+                    slide.classList.add('prev');
+                } else if (index === (currentSlide + 1) % slides.length) {
+                    slide.classList.add('next');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlides();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlides();
+        }
+
+        // Auto-rotate slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize
+        updateSlides();
+    </script>
+    <!-- JAVA-SCRIPT -->
 </body>
 </html>
