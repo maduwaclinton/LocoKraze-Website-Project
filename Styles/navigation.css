@@ -243,7 +243,6 @@ color: #FF1493;
 .nav-link a:hover .icon {
   filter: drop-shadow(0 0 8px rgba(255,20,147,0.7));
 }
-}
 
 .fa::before, .fas::before, .far::before, .fal::before, .fa-solid::before, .fa-regular::before, .fa-light::before,
 .fa::after, .fas::after, .far::after, .fal::after, .fa-solid::after, .fa-regular::after, .fa-light::after {

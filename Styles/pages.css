@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fjalla+One&family=Tilt+Neon&display=swap');
+
+/* Page content styles for About / Contact / Accessories / New Arrivals */
+body {
+  background: linear-gradient(180deg, #fff 0%, #f8f6fb 100%);
+  color: #1a0b2b;
+  font-family: 'DM Serif Display', serif;
+  margin: 0;
+}
+
+.page-hero {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 28px 20px;
+  background: linear-gradient(135deg, rgba(255,20,147,0.03), rgba(139,0,255,0.02));
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(11,6,32,0.06);
+}
+
+.page-hero h1 {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 2.4rem;
+  color: rgba(139,0,255,0.95);
+  margin: 0 0 12px 0;
+  -webkit-text-stroke: 0.6px rgba(139,0,255,0.9);
+}
+
+.page-hero p {
+  margin: 0 0 8px 0;
+  color: #3a2743;
+  line-height: 1.5;
+}
+
+.page-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 18px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(11,6,32,0.04);
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(139,0,255,0.12);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 16px;
+  background: linear-gradient(90deg,#ff1493,#8b00ff);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer spacing helper */
+.page-footer { max-width: 1100px; margin: 40px auto; padding: 12px 20px; color: #6b4b7a; }

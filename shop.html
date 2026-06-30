@@ -3,15 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Shop | Loco Kraze Store</title>
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fjalla+One&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/navigation.css">
+    <link rel="stylesheet" href="Styles/shop.css">
 </head>
 <body>
-    <h1>Menu</h1>
-    <a href="index.html">Home</a>
-    <a href="storeS.html">Store</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <div class="navigation-wrapper">
+        <div class="Top-Column">
+            <div class="Left-Column">
+                <div class="contact-icon">
+                    <a href="tel:+263715234187" aria-label="Call us">
+                        <svg class="icon icon-phone" viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12 1.04.37 2.04.73 3 .2.5.05 1.09-.42 1.4l-1.2.8a16 16 0 0 0 6 6l.8-1.2c.31-.47.9-.62 1.4-.42.96.36 1.96.61 3 .73A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="Contact-Hours-Wrapper">
+                    <div class="phone">
+                        <a href="tel:+263715234187">+263 71 523 4187</a>
+                    </div>
+                    <div class="hours">0800hrs-1600hrs</div>
+                </div>
+            </div>
+            <div class="Banner-Image"></div>
+            <div class="Right-Column">
+                <div class="Address-Wrapper">
+                    <div class="Address">
+                        <a href="contact.html">House Number 6477</br>Westlea, Harare</a>
+                    </div>
+                </div>
+                <div class="location-icon">
+                    <a href="contact.html" aria-label="Location">
+                        <svg class="icon icon-location" viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                          <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6" fill="none" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="Middle-Column">
+            <div class="Links-Wrapper">
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="shop.html">Shop</a></div>
+                <div class="nav-link"><a href="accessories.html">Accessories</a></div>
+                <div class="nav-link"><a href="new-arrivals.html">New Arrivals</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
+                <div class="nav-link"><a href="about.html">About Us</a></div>
+                <div class="nav-link"><a href="cart.html">Cart</a></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="shop-page">
+        <section class="product-list-section">
+            <div class="products-topbar">
+                <div class="shop-status" id="shopStatus">No products loaded yet.</div>
+            </div>
+            <div id="productGrid" class="product-grid">
+                <div class="product-empty">No products available.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/shop.js"></script>
 </body>
 </html>

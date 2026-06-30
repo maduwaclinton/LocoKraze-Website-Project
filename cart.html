@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loco_Kraze_Store</title>
+    <title>Cart - Loco_Kraze_Store</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="Styles/common.css">
     <link rel="stylesheet" href="Styles/navigation.css">
     <link rel="stylesheet" href="Styles/homepage.css">
+    <link rel="stylesheet" href="Styles/shop.css">
 </head>
 <body>
     <div class="navigation-wrapper">
@@ -96,98 +97,33 @@
                           <circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="1.6" />
                           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        Cart
+                        Cart <span id="cartCount" class="cart-count"></span>
                     </a>
                 </div>
 
             </div>
         </div>
 
-
     </div>
 
     <div class="Hero-Section">
         <div class="Top-Column">
-                <div class="glass-search-container">
-                <input id="globalSearchInput" class="search-input" type="text" placeholder="Search Products">
-                <button id="globalSearchButton" class="search-button" type="button" aria-label="Search">
-                    <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" focusable="false">
-                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.505 4.505 0 019.5 14z"
-                        fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
+            <h1 style="color: #FF0090; font-size: 3.2em; font-family: 'Tilt Neon', sans-serif; font-weight: 900; text-shadow: 0 0 15px rgba(255,20,147,0.4), 0 0 30px rgba(139,0,255,0.5), 0 0 45px rgba(255,20,147,0.6); margin: 0; -webkit-text-stroke: 0.5px rgba(255,255,255,0.3);">Your Shopping Cart</h1>
         </div>
 
         <div class="Bottom-Column">
-            <div class="slide prev">
-                <img src="images/Display Images/download (5).jpg" alt="Previous slide">
+            <div style="width: 100%; text-align: center; color: white; font-family: 'DM Serif Display', serif; font-size: 1.2em;">
+                <div id="cartStatus">Loading cart...</div>
             </div>
-            <div class="slide active">
-                <img src="images/Display Images/ateez.jpg" alt="Current slide">
-            </div>
-            <div class="slide next">
-                <img src="images/Display Images/download (7).jpg" alt="Next slide">
-            </div>
+            <div id="cartContainer" style="width:100%; margin-top:18px;"></div>
         </div>
-
     </div>
+
     <div class="Footer-Section">
         <div class="icons-wrapper">
             <!-- links go here -->
         </div>
     </div>
-
-    <!-- JAVA-SCRIPT -->
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 1; // Start with the active slide (middle one)
-
-        function updateSlides() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('prev', 'active', 'next');
-                
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
-                    slide.classList.add('prev');
-                } else if (index === (currentSlide + 1) % slides.length) {
-                    slide.classList.add('next');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlides();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlides();
-        }
-
-        // Auto-rotate slides every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Initialize
-        updateSlides();
-    </script>
-        <script>
-            // Wire the homepage search to the shop page
-            (function(){
-                const input = document.getElementById('globalSearchInput');
-                const btn = document.getElementById('globalSearchButton');
-                function doSearch() {
-                    const q = (input.value || '').trim();
-                    if (!q) return;
-                    const url = 'shop.html?q=' + encodeURIComponent(q);
-                    window.location.href = url;
-                }
-                if (btn) btn.addEventListener('click', doSearch);
-                if (input) input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
-            })();
-        </script>
-    <!-- JAVA-SCRIPT -->
+    <script src="scripts/cart.js"></script>
 </body>
 </html>
